@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeShare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><i class="fas fa-utensils"></i> RecipeShare</h1>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+        <nav class="sticky">
+            <ul>
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#add-recipe"><i class="fas fa-plus-circle"></i> Add Recipe</a></li>
+                <li><a href="#view-recipes"><i class="fas fa-book-open"></i> View Recipes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2>Welcome to RecipeShare</h2>
+                <p>Discover, create, and share your favorite recipes with the world!</p>
+            </div>
+            <div class="featured-recipes">
+                <h3>Featured Recipes</h3>
+                <div class="recipes-grid" id="featuredRecipes">
+                    <!-- Featured recipes will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="add-recipe" class="section">
+            <h2>Add New Recipe</h2>
+            <form id="recipeForm">
+                <div class="form-group">
+                    <label for="recipeName">Recipe Name*</label>
+                    <input type="text" id="recipeName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipeCategory">Category*</label>
+                    <select id="recipeCategory" required>
+                        <option value="">Select a category</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Drinks">Drinks</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipeIngredients">Ingredients* (one per line)</label>
+                    <textarea id="recipeIngredients" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipeSteps">Preparation Steps*</label>
+                    <div class="formatting-toolbar">
+                        <button type="button" class="format-btn" data-format="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                        <button type="button" class="format-btn" data-format="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                        <button type="button" class="format-btn" data-format="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                        <button type="button" class="format-btn" data-format="subscript" title="Subscript"><i class="fas fa-subscript"></i></button>
+                        <button type="button" class="format-btn" data-format="superscript" title="Superscript"><i class="fas fa-superscript"></i></button>
+                    </div>
+                    <textarea id="recipeSteps" rows="8" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Save Recipe</button>
+            </form>
+        </section>
+
+        <section id="view-recipes" class="section">
+            <h2>Browse Recipes</h2>
+            <div class="filter-controls">
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Drinks">Drinks</option>
+                </select>
+            </div>
+            
+            <div class="recipes-grid" id="allRecipes">
+                <!-- All recipes will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RecipeShare. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
